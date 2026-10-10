@@ -23,3 +23,8 @@ CREATE TABLE IF NOT EXISTS login_history (
 SHOW TABLES;
 DESCRIBE users;
 DESCRIBE login_history;
+
+CREATE DATABASE IF NOT EXISTS cloudnautic_db;
+CREATE USER IF NOT EXISTS 'atul'@'localhost' IDENTIFIED BY 'choose-a-password';
+ALTER USER 'atul'@'localhost' IDENTIFIED BY 'choose-a-password';
+GRANT ALL PRIVILEGES ON cloudnautic_db.* TO 'atul'@'localhost';
