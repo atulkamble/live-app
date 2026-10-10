@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cloudnautic Login</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:white;display:grid;place-items:center;min-height:100vh;margin:0}
+.card{background:#1e293b;padding:35px;border-radius:15px;width:320px;max-width:85vw}
+input,button{box-sizing:border-box;width:100%;padding:13px;margin:9px 0;border-radius:7px;border:0}
+button{background:#38bdf8;cursor:pointer;font-weight:bold}
+a{color:#38bdf8}.error{color:#fca5a5}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Cloudnautic Login</h2>
+{% with messages = get_flashed_messages() %}
+{% for message in messages %}
+<p class="error">{{ message }}</p>
+{% endfor %}
+{% endwith %}
+<form method="POST">
+<input name="email" type="email" placeholder="Email" required>
+<input name="password" type="password" placeholder="Password" required>
+<button type="submit">Sign In</button>
+</form>
+<p>New user? <a href="{{ url_for('register') }}">Register</a></p>
+</div>
+</body>
+</html>
